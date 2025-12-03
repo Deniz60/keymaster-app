@@ -15,7 +15,7 @@ export function LanguageToggle({ language, onChange }: LanguageToggleProps) {
       type="button"
       onClick={() => onChange(language === 'en' ? 'tr' : 'en')}
       className={cn(
-        'flex items-center justify-center px-2 py-1 sm:px-3 sm:py-2 rounded-lg',
+        'flex items-center justify-center px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg',
         'bg-white/5 border border-white/10',
         'hover:bg-white/10 hover:border-white/20',
         'transition-all duration-200',

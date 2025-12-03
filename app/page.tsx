@@ -179,17 +179,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile Header - iki satır */}
-          <div className="sm:hidden py-2">
+          {/* Mobile Header */}
+          <div className="sm:hidden py-3">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <div className="flex items-center gap-2">
                 <img 
                   src="/favicon.png" 
                   alt="KeyMaster" 
-                  className="w-7 h-7 rounded-md"
+                  className="w-8 h-8 rounded-lg"
                 />
-                <span className="text-base font-bold text-white">
+                <span className="text-lg font-bold text-white">
                   Key<span className="text-blue-400">Master</span>
                 </span>
               </div>

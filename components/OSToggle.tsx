@@ -25,7 +25,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'win'}
       >
-        <Monitor className="w-3 h-3 sm:w-4 sm:h-4" />
+        <Monitor className="w-4 h-4 sm:w-4 sm:h-4" />
       </button>
       <button
         type="button"
@@ -34,7 +34,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'mac'}
       >
-        <Apple className="w-3 h-3 sm:w-4 sm:h-4" />
+        <Apple className="w-4 h-4 sm:w-4 sm:h-4" />
       </button>
     </div>
   );

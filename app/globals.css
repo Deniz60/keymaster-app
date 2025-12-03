@@ -108,7 +108,7 @@
   }
 
   .os-toggle-option {
-    @apply relative z-10 p-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium rounded-full;
+    @apply relative z-10 p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium rounded-full;
     @apply transition-colors duration-200;
     @apply cursor-pointer select-none;
     @apply flex items-center justify-center;
