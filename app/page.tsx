@@ -140,37 +140,37 @@ export default function Home() {
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16 gap-2">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 flex-shrink-0">
               <img 
                 src="/favicon.png" 
                 alt="KeyMaster Logo" 
-                className="w-10 h-10 rounded-xl"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl"
               />
-              <h1 className="text-xl font-bold text-white">
+              <h1 className="text-base sm:text-xl font-bold text-white hidden sm:block">
                 Key<span className="text-blue-400">Master</span>
               </h1>
             </div>
 
             {/* Right side controls */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 sm:gap-3">
               <LanguageToggle language={language} onChange={setLanguage} />
               <OSToggle os={os} onChange={setOs} />
               <button
                 onClick={() => setShowPrintModal(true)}
-                className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="p-1.5 sm:p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label={t.print}
                 title={t.print}
               >
-                <Printer className="w-5 h-5" />
+                <Printer className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="p-1.5 sm:p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors hidden sm:block"
                 aria-label="View on GitHub"
               >
                 <Github className="w-5 h-5" />

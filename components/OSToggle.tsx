@@ -25,9 +25,10 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'win'}
       >
-        <span className="flex items-center gap-2">
-          <Monitor className="w-4 h-4" />
-          <span>Windows</span>
+        <span className="flex items-center gap-1 sm:gap-2">
+          <Monitor className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          <span className="hidden sm:inline">Windows</span>
+          <span className="sm:hidden text-xs">Win</span>
         </span>
       </button>
       <button
@@ -37,9 +38,10 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'mac'}
       >
-        <span className="flex items-center gap-2">
-          <Apple className="w-4 h-4" />
-          <span>macOS</span>
+        <span className="flex items-center gap-1 sm:gap-2">
+          <Apple className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          <span className="hidden sm:inline">macOS</span>
+          <span className="sm:hidden text-xs">Mac</span>
         </span>
       </button>
     </div>
