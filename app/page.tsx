@@ -140,22 +140,22 @@ export default function Home() {
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-12 sm:h-16">
-            {/* Logo - sadece ikon mobilde */}
-            <div className="flex items-center gap-2 flex-shrink-0 min-w-0">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            {/* Logo */}
+            <div className="flex items-center gap-2 flex-shrink-0">
               <img 
                 src="/favicon.png" 
                 alt="KeyMaster Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex-shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
               />
-              <h1 className="text-lg sm:text-xl font-bold text-white whitespace-nowrap hidden md:block">
+              <h1 className="text-lg sm:text-xl font-bold text-white whitespace-nowrap hidden sm:block">
                 Key<span className="text-blue-400">Master</span>
               </h1>
             </div>
 
             {/* Right side controls */}
-            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-3">
               <LanguageToggle language={language} onChange={setLanguage} />
               <OSToggle os={os} onChange={setOs} />
               <button

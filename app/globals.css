@@ -103,12 +103,12 @@
 
   /* OS Toggle styling */
   .os-toggle {
-    @apply relative flex items-center p-0.5 sm:p-1;
+    @apply relative flex items-center p-0.5;
     @apply bg-white/5 border border-white/10 rounded-full;
   }
 
   .os-toggle-option {
-    @apply relative z-10 px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-full;
+    @apply relative z-10 px-1.5 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm font-medium rounded-full;
     @apply transition-colors duration-200;
     @apply cursor-pointer select-none;
   }

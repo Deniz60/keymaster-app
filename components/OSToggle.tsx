@@ -27,8 +27,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
       >
         <span className="flex items-center gap-1 sm:gap-2">
           <Monitor className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          <span className="hidden sm:inline">Windows</span>
-          <span className="sm:hidden text-xs">Win</span>
+          <span className="hidden min-[400px]:inline text-xs sm:text-sm">Win</span>
         </span>
       </button>
       <button
@@ -40,8 +39,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
       >
         <span className="flex items-center gap-1 sm:gap-2">
           <Apple className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          <span className="hidden sm:inline">macOS</span>
-          <span className="sm:hidden text-xs">Mac</span>
+          <span className="hidden min-[400px]:inline text-xs sm:text-sm">Mac</span>
         </span>
       </button>
     </div>
