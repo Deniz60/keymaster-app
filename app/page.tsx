@@ -141,26 +141,27 @@ export default function Home() {
     <>
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 sm:h-16">
+          {/* Desktop Header - tek satır */}
+          <div className="hidden sm:flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-2">
               <img 
                 src="/favicon.png" 
                 alt="KeyMaster Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
+                className="w-10 h-10 rounded-lg"
               />
-              <h1 className="text-lg sm:text-xl font-bold text-white whitespace-nowrap hidden sm:block">
+              <h1 className="text-xl font-bold text-white">
                 Key<span className="text-blue-400">Master</span>
               </h1>
             </div>
 
             {/* Right side controls */}
-            <div className="flex items-center gap-1.5 sm:gap-3">
+            <div className="flex items-center gap-3">
               <LanguageToggle language={language} onChange={setLanguage} />
               <OSToggle os={os} onChange={setOs} />
               <button
                 onClick={() => setShowPrintModal(true)}
-                className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors hidden sm:flex"
+                className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label={t.print}
                 title={t.print}
               >
@@ -175,6 +176,29 @@ export default function Home() {
               >
                 <Github className="w-5 h-5" />
               </a>
+            </div>
+          </div>
+
+          {/* Mobile Header - iki satır */}
+          <div className="sm:hidden py-2">
+            <div className="flex items-center justify-between">
+              {/* Logo */}
+              <div className="flex items-center gap-2">
+                <img 
+                  src="/favicon.png" 
+                  alt="KeyMaster" 
+                  className="w-7 h-7 rounded-md"
+                />
+                <span className="text-base font-bold text-white">
+                  Key<span className="text-blue-400">Master</span>
+                </span>
+              </div>
+
+              {/* Controls */}
+              <div className="flex items-center gap-2">
+                <LanguageToggle language={language} onChange={setLanguage} />
+                <OSToggle os={os} onChange={setOs} />
+              </div>
             </div>
           </div>
         </div>

@@ -14,8 +14,8 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
     <div className="os-toggle" role="radiogroup" aria-label="Operating System">
       <div
         className={cn(
-          "absolute inset-y-1 rounded-full bg-white/20 transition-all duration-200",
-          os === 'win' ? 'left-1 w-[calc(50%-4px)]' : 'left-1/2 w-[calc(50%-4px)]'
+          "absolute inset-y-0.5 sm:inset-y-1 rounded-full bg-white/20 transition-all duration-200",
+          os === 'win' ? 'left-0.5 sm:left-1 w-[calc(50%-2px)] sm:w-[calc(50%-4px)]' : 'left-1/2 w-[calc(50%-2px)] sm:w-[calc(50%-4px)]'
         )}
       />
       <button
@@ -25,10 +25,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'win'}
       >
-        <span className="flex items-center gap-1 sm:gap-2">
-          <Monitor className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          <span className="hidden min-[400px]:inline text-xs sm:text-sm">Win</span>
-        </span>
+        <Monitor className="w-3 h-3 sm:w-4 sm:h-4" />
       </button>
       <button
         type="button"
@@ -37,10 +34,7 @@ export function OSToggle({ os, onChange }: OSToggleProps) {
         role="radio"
         aria-checked={os === 'mac'}
       >
-        <span className="flex items-center gap-1 sm:gap-2">
-          <Apple className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          <span className="hidden min-[400px]:inline text-xs sm:text-sm">Mac</span>
-        </span>
+        <Apple className="w-3 h-3 sm:w-4 sm:h-4" />
       </button>
     </div>
   );
