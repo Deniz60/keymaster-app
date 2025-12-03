@@ -1,0 +1,23 @@
+{
+  "name": "KeyMaster - Keyboard Shortcuts",
+  "short_name": "KeyMaster",
+  "description": "Master your keyboard shortcuts for VS Code, Excel, Word, PowerPoint and more!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities", "education"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

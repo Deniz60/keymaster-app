@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@layer components {
+  /* Simple card style - no backdrop-blur for better performance */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl;
+    @apply bg-zinc-900/80;
+    @apply border border-white/10;
+    @apply transition-colors duration-200;
+  }
+
+  .glass-card:hover {
+    @apply bg-zinc-800/80 border-white/20;
+  }
+
+  /* Keyboard key styling */
+  .kbd-key {
+    @apply inline-flex items-center justify-center;
+    @apply px-2 py-1 min-w-[2rem] h-8;
+    @apply text-sm font-mono font-medium;
+    @apply bg-gradient-to-b from-zinc-700 to-zinc-800;
+    @apply border border-zinc-600 rounded-lg;
+    @apply shadow-[0_2px_0_0_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.1)];
+    @apply text-zinc-200;
+    @apply transition-all duration-150;
+  }
+
+  .kbd-key:active {
+    @apply translate-y-[1px];
+    @apply shadow-[0_1px_0_0_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.1)];
+  }
+
+  /* Category pill styling */
+  .category-pill {
+    @apply px-4 py-2 rounded-full text-sm font-medium;
+    @apply bg-white/5 border border-white/10;
+    @apply transition-all duration-200;
+    @apply hover:bg-white/10 hover:border-white/20;
+    @apply cursor-pointer select-none;
+  }
+
+  .category-pill.active {
+    @apply bg-white/20 border-white/30 text-white;
+  }
+
+  /* Search input styling */
+  .search-input {
+    @apply w-full px-4 py-3 pl-12;
+    @apply bg-white/5 border border-white/10 rounded-xl;
+    @apply text-white placeholder-zinc-500;
+    @apply focus:outline-none focus:border-white/30 focus:bg-white/10;
+    @apply transition-all duration-200;
+  }
+
+  /* OS Toggle styling */
+  .os-toggle {
+    @apply relative flex items-center p-1;
+    @apply bg-white/5 border border-white/10 rounded-full;
+  }
+
+  .os-toggle-option {
+    @apply relative z-10 px-4 py-2 text-sm font-medium rounded-full;
+    @apply transition-colors duration-200;
+    @apply cursor-pointer select-none;
+  }
+
+  .os-toggle-option.active {
+    @apply text-white;
+  }
+
+  .os-toggle-option:not(.active) {
+    @apply text-zinc-400 hover:text-zinc-300;
+  }
+
+  /* Toast notification */
+  .toast {
+    @apply fixed bottom-6 right-6 z-50;
+    @apply px-4 py-3 rounded-xl;
+    @apply bg-emerald-500/20 border border-emerald-500/30;
+    @apply text-emerald-400 text-sm font-medium;
+    @apply backdrop-blur-xl;
+    @apply shadow-lg;
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-zinc-300 to-white;
+  }
+
+  /* Static gradient background - no animation for better performance */
+  .bg-gradient-animated {
+    background: linear-gradient(
+      -45deg,
+      rgba(59, 130, 246, 0.1),
+      rgba(139, 92, 246, 0.1),
+      rgba(236, 72, 153, 0.1),
+      rgba(59, 130, 246, 0.1)
+    );
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.1),
+      0 0 40px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+
+  /* Slide up animation for modals */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.2s ease-out forwards;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn,
+    .animate-slideUp {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
