@@ -43,13 +43,13 @@ export function PrintModal({ isOpen, onClose, shortcuts, os, language, appName }
       {/* Modal Overlay */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-black/90 z-50 print:hidden"
+        className="fixed inset-0 bg-black/90 z-50 print-hide"
       />
 
       {/* Modal Content */}
-      <div className="fixed inset-4 md:inset-10 bg-[#0a0a0a] rounded-2xl border border-white/10 z-50 overflow-hidden flex flex-col print:fixed print:inset-0 print:bg-white print:border-none print:rounded-none">
+      <div className="print-modal-container fixed inset-4 md:inset-10 bg-[#0a0a0a] rounded-2xl border border-white/10 z-50 overflow-hidden flex flex-col print:static print:inset-auto print:bg-white print:border-none print:rounded-none print:overflow-visible">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-white/10 print:hidden">
+        <div className="flex items-center justify-between p-4 border-b border-white/10 print-hide">
           <h2 className="text-xl font-semibold text-white">{appName} Shortcuts</h2>
           <div className="flex items-center gap-2">
             <button
@@ -72,7 +72,7 @@ export function PrintModal({ isOpen, onClose, shortcuts, os, language, appName }
         {/* Printable Content */}
         <div 
           ref={printRef}
-          className="flex-1 overflow-auto p-6 print:p-4 print:overflow-visible"
+          className="print-content flex-1 overflow-auto p-6 print:p-4 print:overflow-visible print:bg-white"
         >
           {/* Print Header */}
           <div className="hidden print:block mb-6">
@@ -89,7 +89,7 @@ export function PrintModal({ isOpen, onClose, shortcuts, os, language, appName }
                 <h3 className="text-lg font-semibold text-white mb-4 print:text-black print:text-base print:mb-2">
                   {category}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 print:gap-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 print:grid-cols-2 print:gap-1">
                   {categoryShortcuts.map((shortcut) => {
                     const keys = isLocalizedKeys(shortcut.keys)
                       ? shortcut.keys[language][os]
@@ -132,16 +132,36 @@ export function PrintModal({ isOpen, onClose, shortcuts, os, language, appName }
       {/* Print Styles */}
       <style jsx global>{`
         @media print {
-          body * {
-            visibility: hidden;
+          /* Hide everything first */
+          body > *:not(.print-modal-container) {
+            display: none !important;
           }
           
-          .print\\:fixed,
-          .print\\:fixed * {
-            visibility: visible;
+          /* Reset body */
+          body {
+            background: white !important;
+            color: black !important;
           }
           
-          .print\\:hidden {
+          /* Show only print content */
+          .print-modal-container {
+            position: static !important;
+            display: block !important;
+            visibility: visible !important;
+          }
+          
+          .print-content {
+            display: block !important;
+            visibility: visible !important;
+            background: white !important;
+            color: black !important;
+          }
+          
+          .print-content * {
+            visibility: visible !important;
+          }
+          
+          .print-hide {
             display: none !important;
           }
 
